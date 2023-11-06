@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <ctime>
 
 using namespace std;
 
@@ -434,16 +435,37 @@ int main()
     vector<point> zPointAll;
     vector<COLORREF> colorAll;
     init(shapeAll, zPointAll, colorAll);
-    
+
+    unsigned int start_time; 
+    unsigned int end_time;
+    unsigned int search_time;
+    cout << endl << endl << endl << endl << endl << endl << endl << endl;
     for (int i = 0; i < 4; i++)
     {
+         start_time = clock(); // начальное время
          DDA(shapeAll[i], colorAll[i]);
+         end_time = clock(); // конечное время
+         search_time = end_time - start_time; // искомое время
+         cout << search_time << " ";
+         start_time = clock(); // начальное время
          areaA(zPointAll[i].x, zPointAll[i].y, colorAll[i]);
+         end_time = clock(); // конечное время
+         search_time = end_time - start_time; // искомое время
+         cout << search_time << endl;
+
     }
     for (int i = 4; i < 8; i++)
     {
+        start_time = clock(); // начальное время
         brezenham(shapeAll[i], colorAll[i]);
+        end_time = clock(); // конечное время
+        search_time = end_time - start_time; // искомое время
+        cout << search_time << " ";
+        start_time = clock(); // начальное время
         areaB(zPointAll[i].x, zPointAll[i].y, colorAll[i]);
+        end_time = clock(); // конечное время
+        search_time = end_time - start_time; // искомое время
+        cout << search_time << endl;
     }
 
     while (true)
