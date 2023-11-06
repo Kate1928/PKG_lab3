@@ -1,0 +1,59 @@
+﻿  Lab3.cpp
+D:\PKG\Lab3\Lab3\Lab3.cpp(252,42): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(252,32): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(257,32): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(270,38): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(270,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(235,11): warning C4101: i: неиспользованная локальная переменная
+D:\PKG\Lab3\Lab3\Lab3.cpp(289,29): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(290,29): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(291,20): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(292,52): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(292,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(295,42): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(295,32): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(299,26): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(304,26): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(309,32): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(314,27): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(315,27): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(316,16): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(317,44): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(317,24): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(320,38): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(320,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(324,22): warning C4244: -=: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(329,22): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(341,11): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(342,11): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(348,29): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(348,24): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(349,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(350,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(353,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(358,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(361,15): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(364,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(369,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(381,11): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(382,11): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(390,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(391,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(394,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(395,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(395,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(400,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(401,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(401,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(404,15): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(407,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(408,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(408,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(413,21): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(414,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(414,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(441,44): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(441,28): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(446,43): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\PKG\Lab3\Lab3\Lab3.cpp(446,27): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  Lab3.vcxproj -> D:\PKG\Lab3\x64\Debug\Lab3.exe
