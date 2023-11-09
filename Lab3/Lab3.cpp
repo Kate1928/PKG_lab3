@@ -8,6 +8,7 @@
 #include <ctime>
 #include <fstream>
 #include <cmath>
+#include <set>
 
 using namespace std;
 
@@ -31,10 +32,13 @@ HDC hdc;
 int metricsDDA = 0, metricsBrezenham = 0, metricsA = 0, metricsB = 0;
 ofstream file2;
 
-void coordinateSystem()
-{
-    
-}
+//void coordinateSystem()
+//{
+//    
+//}
+//
+//set <point> stA;
+//set <point> stB;
 
 //здесь просто все наши координаты, цвета и затравочные точки 
 
@@ -285,6 +289,69 @@ void DDA(vector<point>& shape1, COLORREF color)
     metricsDDA = 0;
 }
 
+void DDApoint(vector<point>& shape1, COLORREF color, int choice)
+{
+    float i, l;
+    float x, y, dx, dy;
+    for (int i = 0; i < shape1.size() - 1; i++)
+    {
+        //вычисляем большую из длин l отрезка по оси x и y
+        l = abs(shape1[i + 1].x - shape1[i].x) >= abs(shape1[i + 1].y - shape1[i].y) ? abs(shape1[i + 1].x - shape1[i].x) : abs(shape1[i + 1].y - shape1[i].y);
+        //определяем приращения по оси x и y, полагая большее из них равным единице
+        dx = (shape1[i + 1].x - shape1[i].x) / l;
+        dy = (shape1[i + 1].y - shape1[i].y) / l;
+        //начинаем с точки (x,y)
+        x = shape1[i].x;
+        y = shape1[i].y;
+
+        //цикл по большей длине отрезка
+        for (int j = 0; j < l; j++)
+        {
+            if (j % 2 == 0)
+            {
+                SetPixel(hdc, round(x), round(y), 0x00FFFFFF);
+            }
+            else
+            {
+            SetPixel(hdc, round(x), round(y), color);
+            }
+            //Sleep(100);
+            metricsDDA++;
+            x += dx;
+            y += dy;
+        }
+        file2 << " кол-во пикселейDDA: " << metricsDDA << " ";
+        metricsDDA = 0;
+    }
+    //тоже-самое для последней стороны многоугольника 
+    int end = shape1.size() - 1;
+    l = abs(shape1[0].x - shape1[end].x) >= abs(shape1[0].y - shape1[end].y) ? abs(shape1[0].x - shape1[end].x) : abs(shape1[0].y - shape1[end].y);
+    //определяем приращения по оси x и y, полагая большее из них равным единице
+    dx = (shape1[0].x - shape1[end].x) / l;
+    dy = (shape1[0].y - shape1[end].y) / l;
+    //начинаем с точки (x,y)
+    x = shape1[end].x;
+    y = shape1[end].y;
+    //цикл по большей длине отрезка
+    for (int j = 0; j < l; j++)
+    {
+        if (j % choice == 0)
+        {
+            SetPixel(hdc, round(x), round(y), 0x00FFFFFF);
+        }
+        else
+        {
+            SetPixel(hdc, round(x), round(y), color);
+        }
+        metricsDDA++;
+        //SetPixel(hdc, round(x), round(y), RGB(255, 0, 0));
+        x += dx;
+        y += dy;
+    }
+    file2 << " кол-во пикселейDDA: " << metricsDDA << endl;
+    metricsDDA = 0;
+}
+
 void DDAtest(int x1, int x2, int y1, int y2)
 {
     float i, l;
@@ -321,8 +388,8 @@ void brezenham(vector<point>& shape1, COLORREF color)
         signX = shape1[i].x < shape1[i + 1].x ? 1 : -1; //1
         signY = shape1[i].y < shape1[i + 1].y ? 1 : -1; //1
         error = dx - dy;
-        SetPixel(hdc, round(shape1[i + 1].x), round(shape1[i + 1].y), color);
-        metricsBrezenham++;
+        //SetPixel(hdc, round(shape1[i + 1].x), round(shape1[i + 1].y), color);
+        //metricsBrezenham++;
         while (x != shape1[i + 1].x || y != shape1[i + 1].y)
         {
             if (GetPixel(hdc, round(x), round(y)) == 0x00CCCCCC)
@@ -433,8 +500,7 @@ void areaA(int xz, int yz, COLORREF color)
     {
         p = stack.top();
         stack.pop();
-        SetPixel(hdc, p.x, p.y, color);
-        
+        SetPixel(hdc, p.x, p.y, color);       
         metricsA++;
         int x = p.x;
         int y = p.y;
@@ -543,7 +609,7 @@ int main()
     {        
         for (int i = 0; i < 8; i++)
         {
-            brezenham(shapeAll[i], colorAll[i]);
+            DDA(shapeAll[i], colorAll[i]);
             areaB(zPointAll[i].x, zPointAll[i].y, colorAll[i]);
         }
     }
@@ -552,9 +618,9 @@ int main()
         for (int i = 0; i < 8; i++)
         {
             DDA(shapeAll[i], colorAll[i]);
-            start_time = clock(); // начальное время
+            start_time = GetTickCount(); // начальное время
             areaA(zPointAll[i].x, zPointAll[i].y, colorAll[i]);
-            end_time = clock(); // конечное время
+            end_time = GetTickCount(); // конечное время
             search_time = end_time - start_time; // искомое время
             file << "искомое времяA:" << search_time << " кол-во пикселейA: " << metricsA << " ";
             cout << "A:" << search_time << " ";
@@ -567,12 +633,14 @@ int main()
             search_time = end_time - start_time; // искомое время
             file << "искомое времяB:" << search_time << " кол-во пикселейB: " << metricsB << " ";
             cout << "B:" << search_time << " ";
+            //cout << "difference:" << stA.size() - stB.size() << " ";
             file << endl;
             metricsB = 0;
         }
         cout << endl;
         metricsDDA = 0;
         metricsBrezenham = 0;
+        
 
         //----------------------------------------------------------------------
         
@@ -601,6 +669,18 @@ int main()
             search_time = end_time - start_time; // искомое время
             cout << "Brezenham:" << search_time << " ";
             metricsBrezenham = 0;
+        }
+    }
+
+    if (test == 2)
+    {
+        int choice;
+        cout << "point or dot-dash?: 2/5 ";
+        cin >> choice;
+        for (int i = 0; i < 8; i++)
+        {
+            DDApoint(shapeAll[i], colorAll[i], choice);
+            areaB(zPointAll[i].x, zPointAll[i].y, colorAll[i]);
         }
     }
 
